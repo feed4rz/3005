@@ -1,0 +1,23 @@
+<canvas id="canvas" width="600" height="400"></canvas>
+<script src="../build.js"></script>
+<script>
+let renderer
+
+window.onload = function() {
+  renderer = new Renderer(document.getElementById('canvas'))
+
+  setInterval(() => {
+    const entity = new Entity(renderer, 'https://www.textures.com/system/categories/45358/frontend-large.jpg', getRandomInt(0, 24) * 25, getRandomInt(0, 16) * 25, 25, 25, 0)
+
+    console.log(entity)
+
+    entity.half_life = setTimeout(() => { entity.remove() }, getRandomInt(0, 20) * 100)
+  }, 50)
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min)) + min
+}
+</script>

@@ -9,8 +9,7 @@
 		const entity = new Entity(renderer, 'https://www.textures.com/system/categories/45358/frontend-large.jpg', 300, 200, 100, 100, 0)
 
 		setInterval(() => {
-			entity.a += 0.5
-			entity.x = 300 + (Math.sin(entity.a) * 50)
-		}, 50)
+			entity.a += 1
+		}, 100 / 6)
 	}
 </script>
